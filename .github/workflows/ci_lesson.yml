@@ -4,12 +4,13 @@ on:
     inputs:
       environment:
         type: environment
-        default: 'dev'
+        # default: 'dev'
         description: 'dev,stg,prd'
         required: true
 jobs:
-  purge:
+  test_job:
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
     timeout-minutes: 5
     steps:
-      - run: echo test!
+      - run: echo ${{ secrets.TEST_ENV }}
