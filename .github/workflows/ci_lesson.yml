@@ -6,10 +6,6 @@ on:
         type: environment
         default: 'dev'
         description: 'dev,stg,prd'
-        options:
-          - 'dev'
-          - 'stg'
-          - 'prd'
         required: true
 jobs:
   purge:
