@@ -1,0 +1,19 @@
+name: ci lesson
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        default: 'dev'
+        description: 'dev,stg,prd'
+        options:
+          - 'dev'
+          - 'stg'
+          - 'prd'
+        required: true
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: echo test!
